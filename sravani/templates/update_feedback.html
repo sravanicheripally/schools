@@ -1,0 +1,13 @@
+
+
+{% block content %}
+  <h2>Submissions for {{ assignment.title }}</h2>
+  <ul>
+    {% for submission in submissions %}
+      <li>
+        {{ submission.student.user.username }} - {{ submission.submitted_date }}
+        <a href="{% url 'update_feedback' submission.id %}">Update Feedback</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
